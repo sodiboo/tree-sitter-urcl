@@ -1,0 +1,41 @@
+BITS >= 8
+MINREG 4
+MINHEAP 0
+MINSTACK 0
+RUN ROM
+
+.setup
+IMM R1 0 // current value = 0
+IMM R2 3 // fizz counter = 3
+IMM R3 5 // buzz counter = 5
+JMP .start
+.loop
+OUT %TEXT '\n' // draw a new line character to the char display
+BRL .start R1 100
+HLT
+.start
+INC R1 R1
+IMM R4 0 // R4 is used to tell if fizz activated
+DEC R2 R2
+BRZ .fizz R2 // branch to .fizz if fizz counter == 0
+.return
+DEC R3 R3
+BRZ .buzz R3 // branch to .buzz if buzz counter == 0
+BNZ .loop R4 // branch to .loop if R4 != 0
+OUT %NUMB R1 // draw current value to the char display
+JMP .loop
+.fizz
+IMM R4 1 // R4 = 1
+OUT %TEXT 'F' // draw "FIZZ" on the char display
+OUT %TEXT 'I'
+OUT %TEXT 'Z'
+OUT %TEXT 'Z'
+IMM R2 3 // fizz counter = 3
+JMP .return
+.buzz
+OUT %TEXT 'B' // draw "BUZZ" on the char display
+OUT %TEXT 'U'
+OUT %TEXT 'Z'
+OUT %TEXT 'Z'
+IMM R3 5 // buzz counter = 5
+JMP .loop

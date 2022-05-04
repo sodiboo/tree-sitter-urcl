@@ -1,0 +1,17 @@
+BITS 64
+MINREG 3
+MINHEAP 0
+MINSTACK 0
+
+IMM $2 1
+
+.loop
+ADD $3 $1 $2
+BRL .end $3 $2
+OUT %NUMB $3
+OUT %TEXT 0xA // newline
+MOV $1 $2
+MOV $2 $3
+JMP .loop
+.end
+HLT

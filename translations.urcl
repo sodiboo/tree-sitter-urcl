@@ -1,0 +1,5 @@
+BRP ~+2 <B>
+ADD <tempREG1> <B> @MSB
+BRP ~+2 <C>
+ADD <tempREG2> <C> @MSB
+SSETGE <A> <tempREG1> <tempREG2>

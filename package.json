@@ -1,0 +1,25 @@
+{
+    "name": "tree-sitter-urcl",
+    "version": "1.0.0",
+    "description": "tree-sitter grammar for URCL",
+    "main": "bindings/node",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Terrain",
+    "license": "MIT",
+    "dependencies": {
+        "nan": "^2.15.0"
+    },
+    "tree-sitter": [
+        {
+            "scope": "source.urcl",
+            "file-types": [
+                "urcl"
+            ],
+            "highlights": [
+              "queries/highlights.scm"
+            ]
+        }
+    ]
+}
