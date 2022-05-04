@@ -46,6 +46,7 @@ const instructions = instruction_convert({
     MLT: [operand("destination", "reg"), operand("source1", "any"), operand("source2", "any")],
     DIV: [operand("destination", "reg"), operand("source1", "any"), operand("source2", "any")],
     MOD: [operand("destination", "reg"), operand("source1", "any"), operand("source2", "any")],
+    SDIV: [operand("destination", "reg"), operand("source1", "any"), operand("source2", "any")],
 
     // Logical Operations
     NOT: [operand("destination", "reg"), operand("source", "any")],
@@ -67,6 +68,10 @@ const instructions = instruction_convert({
     CAL: [operand("destination", "any")],
     BRE: [operand("destination", "any"), operand("source1", "any"), operand("source2", "any")],
     BNE: [operand("destination", "any"), operand("source1", "any"), operand("source2", "any")],
+    SBRG: [operand("destination", "any"), operand("source1", "any"), operand("source2", "any")],
+    SBGE: [operand("destination", "any"), operand("source1", "any"), operand("source2", "any")],
+    SBRL: [operand("destination", "any"), operand("source1", "any"), operand("source2", "any")],
+    SBLE: [operand("destination", "any"), operand("source1", "any"), operand("source2", "any")],
     BRG: [operand("destination", "any"), operand("source1", "any"), operand("source2", "any")],
     BGE: [operand("destination", "any"), operand("source1", "any"), operand("source2", "any")],
     BRL: [operand("destination", "any"), operand("source1", "any"), operand("source2", "any")],
@@ -83,6 +88,10 @@ const instructions = instruction_convert({
     // Non-Branching Comparisons
     SETE: [operand("destination", "reg"), operand("source1", "any"), operand("source2", "any")],
     SETNE: [operand("destination", "reg"), operand("source1", "any"), operand("source2", "any")],
+    SSETLT: [operand("destination", "reg"), operand("source1", "any"), operand("source2", "any")],
+    SSETLE: [operand("destination", "reg"), operand("source1", "any"), operand("source2", "any")],
+    SSETGT: [operand("destination", "reg"), operand("source1", "any"), operand("source2", "any")],
+    SSETGE: [operand("destination", "reg"), operand("source1", "any"), operand("source2", "any")],
     SETLT: [operand("destination", "reg"), operand("source1", "any"), operand("source2", "any")],
     SETLE: [operand("destination", "reg"), operand("source1", "any"), operand("source2", "any")],
     SETGT: [operand("destination", "reg"), operand("source1", "any"), operand("source2", "any")],
