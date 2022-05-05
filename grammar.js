@@ -174,7 +174,7 @@ module.exports = grammar({
         _immediate_literal: $ => choice($.number, $.char_literal),
         number: $ => token(seq(
             /[+-]?/,
-            choice( // these cannot be regex because of specificity over identifier in unknown operands
+            choice(
                 /0b[0-1]+/,
                 /0o[0-7]+/,
                 /\d+/,
