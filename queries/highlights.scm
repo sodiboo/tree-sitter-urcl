@@ -25,7 +25,7 @@
 ] @string
 [
     "[" "]" ; array literal
-    "<" ">" ; 
+    "<" ">" ; placeholders from documentation, actually invalid syntax
 ] @punctuation.bracket
 [
     ">="
