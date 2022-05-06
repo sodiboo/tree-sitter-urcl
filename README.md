@@ -47,5 +47,5 @@ For syntax highlighting, also do this:
 
 And if you make any changes to `grammar.js`, run `tree-sitter generate` again.
 
--   `tree-sitter parse file.urcl`: parse and view a syntax tre
+-   `tree-sitter parse file.urcl`: parse and view a syntax tree
 -   `tree-sitter highlight file.urcl`: highlights the file in the terminal
