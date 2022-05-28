@@ -1,0 +1,8179 @@
+[
+  {
+    "type": "array",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "char_literal",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "char_literal",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char",
+            "named": true
+          },
+          {
+            "type": "char_escape",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "comment",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "define_word",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "char_literal",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "defined_immediate",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "header_BITS",
+    "named": true,
+    "fields": {
+      "comparison": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "<=",
+            "named": false
+          },
+          {
+            "type": "==",
+            "named": false
+          },
+          {
+            "type": ">=",
+            "named": false
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "header_MINHEAP",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "header_MINREG",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "header_MINSTACK",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "header_RUN",
+    "named": true,
+    "fields": {
+      "header_type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "RUN",
+            "named": false
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "RAM",
+            "named": false
+          },
+          {
+            "type": "ROM",
+            "named": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_ADD",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_AND",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_BEV",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_BGE",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_BLE",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_BNC",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_BNE",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_BNZ",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_BOD",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_BRC",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_BRE",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_BRG",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_BRL",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_BRN",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_BRP",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_BRZ",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_BSL",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_BSR",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_BSS",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_CAL",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_CPY",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_DEC",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_DIV",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_HLT",
+    "named": true,
+    "fields": {
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_IMM",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_IN",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "port",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_INC",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_JMP",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_LLOD",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_LOD",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_LSH",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_LSTR",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_MLT",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_MOD",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_MOV",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_NAND",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_NEG",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_NOP",
+    "named": true,
+    "fields": {
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_NOR",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_NOT",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_OR",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_OUT",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "port",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_POP",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_PSH",
+    "named": true,
+    "fields": {
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_RET",
+    "named": true,
+    "fields": {
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_RSH",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_SETC",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_SETE",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_SETGE",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_SETGT",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_SETLE",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_SETLT",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_SETNC",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_SETNE",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_SRS",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_STR",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_SUB",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_XNOR",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "inst_XOR",
+    "named": true,
+    "fields": {
+      "destination": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "labels": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "source1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      },
+      "source2": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_literal",
+            "named": true
+          },
+          {
+            "type": "defined_immediate",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "program_counter",
+            "named": true
+          },
+          {
+            "type": "register",
+            "named": true
+          },
+          {
+            "type": "relative",
+            "named": true
+          },
+          {
+            "type": "stack_pointer",
+            "named": true
+          },
+          {
+            "type": "unknown_operand",
+            "named": true
+          },
+          {
+            "type": "zero_register",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "label",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "label_def",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "label",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "macro",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "multiline_comment",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "placeholder",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "port",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "relative",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "define_word",
+          "named": true
+        },
+        {
+          "type": "header_BITS",
+          "named": true
+        },
+        {
+          "type": "header_MINHEAP",
+          "named": true
+        },
+        {
+          "type": "header_MINREG",
+          "named": true
+        },
+        {
+          "type": "header_MINSTACK",
+          "named": true
+        },
+        {
+          "type": "header_RUN",
+          "named": true
+        },
+        {
+          "type": "inst_ADD",
+          "named": true
+        },
+        {
+          "type": "inst_AND",
+          "named": true
+        },
+        {
+          "type": "inst_BEV",
+          "named": true
+        },
+        {
+          "type": "inst_BGE",
+          "named": true
+        },
+        {
+          "type": "inst_BLE",
+          "named": true
+        },
+        {
+          "type": "inst_BNC",
+          "named": true
+        },
+        {
+          "type": "inst_BNE",
+          "named": true
+        },
+        {
+          "type": "inst_BNZ",
+          "named": true
+        },
+        {
+          "type": "inst_BOD",
+          "named": true
+        },
+        {
+          "type": "inst_BRC",
+          "named": true
+        },
+        {
+          "type": "inst_BRE",
+          "named": true
+        },
+        {
+          "type": "inst_BRG",
+          "named": true
+        },
+        {
+          "type": "inst_BRL",
+          "named": true
+        },
+        {
+          "type": "inst_BRN",
+          "named": true
+        },
+        {
+          "type": "inst_BRP",
+          "named": true
+        },
+        {
+          "type": "inst_BRZ",
+          "named": true
+        },
+        {
+          "type": "inst_BSL",
+          "named": true
+        },
+        {
+          "type": "inst_BSR",
+          "named": true
+        },
+        {
+          "type": "inst_BSS",
+          "named": true
+        },
+        {
+          "type": "inst_CAL",
+          "named": true
+        },
+        {
+          "type": "inst_CPY",
+          "named": true
+        },
+        {
+          "type": "inst_DEC",
+          "named": true
+        },
+        {
+          "type": "inst_DIV",
+          "named": true
+        },
+        {
+          "type": "inst_HLT",
+          "named": true
+        },
+        {
+          "type": "inst_IMM",
+          "named": true
+        },
+        {
+          "type": "inst_IN",
+          "named": true
+        },
+        {
+          "type": "inst_INC",
+          "named": true
+        },
+        {
+          "type": "inst_JMP",
+          "named": true
+        },
+        {
+          "type": "inst_LLOD",
+          "named": true
+        },
+        {
+          "type": "inst_LOD",
+          "named": true
+        },
+        {
+          "type": "inst_LSH",
+          "named": true
+        },
+        {
+          "type": "inst_LSTR",
+          "named": true
+        },
+        {
+          "type": "inst_MLT",
+          "named": true
+        },
+        {
+          "type": "inst_MOD",
+          "named": true
+        },
+        {
+          "type": "inst_MOV",
+          "named": true
+        },
+        {
+          "type": "inst_NAND",
+          "named": true
+        },
+        {
+          "type": "inst_NEG",
+          "named": true
+        },
+        {
+          "type": "inst_NOP",
+          "named": true
+        },
+        {
+          "type": "inst_NOR",
+          "named": true
+        },
+        {
+          "type": "inst_NOT",
+          "named": true
+        },
+        {
+          "type": "inst_OR",
+          "named": true
+        },
+        {
+          "type": "inst_OUT",
+          "named": true
+        },
+        {
+          "type": "inst_POP",
+          "named": true
+        },
+        {
+          "type": "inst_PSH",
+          "named": true
+        },
+        {
+          "type": "inst_RET",
+          "named": true
+        },
+        {
+          "type": "inst_RSH",
+          "named": true
+        },
+        {
+          "type": "inst_SETC",
+          "named": true
+        },
+        {
+          "type": "inst_SETE",
+          "named": true
+        },
+        {
+          "type": "inst_SETGE",
+          "named": true
+        },
+        {
+          "type": "inst_SETGT",
+          "named": true
+        },
+        {
+          "type": "inst_SETLE",
+          "named": true
+        },
+        {
+          "type": "inst_SETLT",
+          "named": true
+        },
+        {
+          "type": "inst_SETNC",
+          "named": true
+        },
+        {
+          "type": "inst_SETNE",
+          "named": true
+        },
+        {
+          "type": "inst_SRS",
+          "named": true
+        },
+        {
+          "type": "inst_STR",
+          "named": true
+        },
+        {
+          "type": "inst_SUB",
+          "named": true
+        },
+        {
+          "type": "inst_XNOR",
+          "named": true
+        },
+        {
+          "type": "inst_XOR",
+          "named": true
+        },
+        {
+          "type": "unknown_instruction",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "string",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "char",
+          "named": true
+        },
+        {
+          "type": "char_escape",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unknown_instruction",
+    "named": true,
+    "fields": {
+      "label": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "char_literal",
+          "named": true
+        },
+        {
+          "type": "defined_immediate",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "label",
+          "named": true
+        },
+        {
+          "type": "macro",
+          "named": true
+        },
+        {
+          "type": "memory",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "placeholder",
+          "named": true
+        },
+        {
+          "type": "program_counter",
+          "named": true
+        },
+        {
+          "type": "register",
+          "named": true
+        },
+        {
+          "type": "relative",
+          "named": true
+        },
+        {
+          "type": "stack_pointer",
+          "named": true
+        },
+        {
+          "type": "zero_register",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unknown_operand",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "char_literal",
+          "named": true
+        },
+        {
+          "type": "defined_immediate",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "label",
+          "named": true
+        },
+        {
+          "type": "macro",
+          "named": true
+        },
+        {
+          "type": "memory",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "placeholder",
+          "named": true
+        },
+        {
+          "type": "port",
+          "named": true
+        },
+        {
+          "type": "program_counter",
+          "named": true
+        },
+        {
+          "type": "register",
+          "named": true
+        },
+        {
+          "type": "relative",
+          "named": true
+        },
+        {
+          "type": "stack_pointer",
+          "named": true
+        },
+        {
+          "type": "zero_register",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "zero_register",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "\n",
+    "named": false
+  },
+  {
+    "type": "\r",
+    "named": false
+  },
+  {
+    "type": "\"",
+    "named": false
+  },
+  {
+    "type": "$0",
+    "named": false
+  },
+  {
+    "type": "%",
+    "named": false
+  },
+  {
+    "type": "'",
+    "named": false
+  },
+  {
+    "type": "*/",
+    "named": false
+  },
+  {
+    "type": ".",
+    "named": false
+  },
+  {
+    "type": "/*",
+    "named": false
+  },
+  {
+    "type": "//",
+    "named": false
+  },
+  {
+    "type": "<",
+    "named": false
+  },
+  {
+    "type": "<=",
+    "named": false
+  },
+  {
+    "type": "==",
+    "named": false
+  },
+  {
+    "type": ">",
+    "named": false
+  },
+  {
+    "type": ">=",
+    "named": false
+  },
+  {
+    "type": "@",
+    "named": false
+  },
+  {
+    "type": "ADD",
+    "named": false
+  },
+  {
+    "type": "AND",
+    "named": false
+  },
+  {
+    "type": "BEV",
+    "named": false
+  },
+  {
+    "type": "BGE",
+    "named": false
+  },
+  {
+    "type": "BITS",
+    "named": false
+  },
+  {
+    "type": "BLE",
+    "named": false
+  },
+  {
+    "type": "BNC",
+    "named": false
+  },
+  {
+    "type": "BNE",
+    "named": false
+  },
+  {
+    "type": "BNZ",
+    "named": false
+  },
+  {
+    "type": "BOD",
+    "named": false
+  },
+  {
+    "type": "BRC",
+    "named": false
+  },
+  {
+    "type": "BRE",
+    "named": false
+  },
+  {
+    "type": "BRG",
+    "named": false
+  },
+  {
+    "type": "BRL",
+    "named": false
+  },
+  {
+    "type": "BRN",
+    "named": false
+  },
+  {
+    "type": "BRP",
+    "named": false
+  },
+  {
+    "type": "BRZ",
+    "named": false
+  },
+  {
+    "type": "BSL",
+    "named": false
+  },
+  {
+    "type": "BSR",
+    "named": false
+  },
+  {
+    "type": "BSS",
+    "named": false
+  },
+  {
+    "type": "CAL",
+    "named": false
+  },
+  {
+    "type": "CPY",
+    "named": false
+  },
+  {
+    "type": "DEC",
+    "named": false
+  },
+  {
+    "type": "DIV",
+    "named": false
+  },
+  {
+    "type": "DW",
+    "named": false
+  },
+  {
+    "type": "HEAP",
+    "named": false
+  },
+  {
+    "type": "HLT",
+    "named": false
+  },
+  {
+    "type": "IMM",
+    "named": false
+  },
+  {
+    "type": "IN",
+    "named": false
+  },
+  {
+    "type": "INC",
+    "named": false
+  },
+  {
+    "type": "JMP",
+    "named": false
+  },
+  {
+    "type": "LHALF",
+    "named": false
+  },
+  {
+    "type": "LLOD",
+    "named": false
+  },
+  {
+    "type": "LOD",
+    "named": false
+  },
+  {
+    "type": "LSH",
+    "named": false
+  },
+  {
+    "type": "LSTR",
+    "named": false
+  },
+  {
+    "type": "MAX",
+    "named": false
+  },
+  {
+    "type": "MINHEAP",
+    "named": false
+  },
+  {
+    "type": "MINREG",
+    "named": false
+  },
+  {
+    "type": "MINSTACK",
+    "named": false
+  },
+  {
+    "type": "MLT",
+    "named": false
+  },
+  {
+    "type": "MOD",
+    "named": false
+  },
+  {
+    "type": "MOV",
+    "named": false
+  },
+  {
+    "type": "MSB",
+    "named": false
+  },
+  {
+    "type": "NAND",
+    "named": false
+  },
+  {
+    "type": "NEG",
+    "named": false
+  },
+  {
+    "type": "NOP",
+    "named": false
+  },
+  {
+    "type": "NOR",
+    "named": false
+  },
+  {
+    "type": "NOT",
+    "named": false
+  },
+  {
+    "type": "OR",
+    "named": false
+  },
+  {
+    "type": "OUT",
+    "named": false
+  },
+  {
+    "type": "POP",
+    "named": false
+  },
+  {
+    "type": "PSH",
+    "named": false
+  },
+  {
+    "type": "R0",
+    "named": false
+  },
+  {
+    "type": "RAM",
+    "named": false
+  },
+  {
+    "type": "RET",
+    "named": false
+  },
+  {
+    "type": "ROM",
+    "named": false
+  },
+  {
+    "type": "RSH",
+    "named": false
+  },
+  {
+    "type": "RUN",
+    "named": false
+  },
+  {
+    "type": "SETC",
+    "named": false
+  },
+  {
+    "type": "SETE",
+    "named": false
+  },
+  {
+    "type": "SETGE",
+    "named": false
+  },
+  {
+    "type": "SETGT",
+    "named": false
+  },
+  {
+    "type": "SETLE",
+    "named": false
+  },
+  {
+    "type": "SETLT",
+    "named": false
+  },
+  {
+    "type": "SETNC",
+    "named": false
+  },
+  {
+    "type": "SETNE",
+    "named": false
+  },
+  {
+    "type": "SMAX",
+    "named": false
+  },
+  {
+    "type": "SMSB",
+    "named": false
+  },
+  {
+    "type": "SRS",
+    "named": false
+  },
+  {
+    "type": "STR",
+    "named": false
+  },
+  {
+    "type": "SUB",
+    "named": false
+  },
+  {
+    "type": "UHALF",
+    "named": false
+  },
+  {
+    "type": "XNOR",
+    "named": false
+  },
+  {
+    "type": "XOR",
+    "named": false
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
+    "type": "char",
+    "named": true
+  },
+  {
+    "type": "char_escape",
+    "named": true
+  },
+  {
+    "type": "identifier",
+    "named": true
+  },
+  {
+    "type": "memory",
+    "named": true
+  },
+  {
+    "type": "number",
+    "named": true
+  },
+  {
+    "type": "program_counter",
+    "named": true
+  },
+  {
+    "type": "register",
+    "named": true
+  },
+  {
+    "type": "stack_pointer",
+    "named": true
+  },
+  {
+    "type": "~",
+    "named": false
+  }
+]
