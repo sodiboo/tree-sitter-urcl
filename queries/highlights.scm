@@ -1,4 +1,5 @@
 (label) @label
+(relative) @relative
 (register) @register
 (port) @port
 (comment) @comment
