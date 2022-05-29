@@ -10,7 +10,7 @@ For syntax highlighting, also do this:
 -   Add the necessary colors from `queries/highlights.scm` to the config
 -   Alternatively, copy my config which is meant to resemble vscode's Dark+ theme
 
-```json
+```jsonc
 {
     "parser-directories": [
         // Don't forget to add the **parent directory** of this repo
@@ -27,6 +27,7 @@ For syntax highlighting, also do this:
         },
         "label": "#DCDCAA",
         "register": "#9CDCFE",
+        "register.special": "#9CDCFE",
         "address": "#4FC1FF",
         "port": "#4EC9B0",
         "string": "#ce9178",
