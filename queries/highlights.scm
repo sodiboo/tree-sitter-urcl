@@ -1,4 +1,3 @@
-(ERROR) @error
 (label) @label
 (relative) @relative
 (register) @register
