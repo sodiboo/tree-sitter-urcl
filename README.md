@@ -18,13 +18,13 @@ For syntax highlighting, also do this:
         "C:\\Users\\Terrain\\Documents\\Code\\tree-sitter"
     ],
     "theme": {
+        "error": {
+            "color": "#FF0000",
+            "underline": true
+        },
         "header": "#C586C0",
         "macro": "#C586C0",
         "instruction": "#569cd6",
-        "instruction.unknown": {
-            "color": "#569cd6",
-            "italic": true
-        },
         "label": "#DCDCAA",
         "register": "#9CDCFE",
         "register.special": "#9CDCFE",
