@@ -203,6 +203,11 @@
     }
   },
   {
+    "type": "identifier",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "instruction",
     "named": true,
     "fields": {
@@ -449,10 +454,6 @@
   },
   {
     "type": "char_escape",
-    "named": true
-  },
-  {
-    "type": "identifier",
     "named": true
   },
   {

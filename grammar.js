@@ -1,14 +1,3 @@
-const DIGIT = Array(10).fill(0).map((_, i) => i.toString());
-
-const WORD_CHAR = [
-    ...Array(26).fill(0).map((_, i) => (i + 10).toString(36).toUpperCase()),
-    ...Array(26).fill(0).map((_, i) => (i + 10).toString(36).toLowerCase()),
-    ...DIGIT,
-    "_",
-];
-
-const not = (...chars) => choice(...WORD_CHAR.filter(c => !chars.includes(c)));
-
 module.exports = grammar({
     name: "URCL",
     extras: $ => [$._whitespace, $.comment],
@@ -61,17 +50,17 @@ module.exports = grammar({
             prec(-1, $.identifier),
         ),
         _register: $ => choice($.register, $.program_counter, $.stack_pointer),
-        register: $ => /[$R](([1-9]0*)+|0)/,
+        register: $ => /[$Rr](([1-9]0*)+|0)/,
         program_counter: $ => "PC",
         stack_pointer: $ => "SP",
         placeholder: $ => seq("<", $.identifier, ">"),
-        identifier: $ => token(choice(
-            seq("S", not("P")),
-            seq("P", not("C")),
-            seq(/[RM]/, repeat(choice(...DIGIT)), not(...DIGIT), repeat(choice(...WORD_CHAR))),
-            seq(not("S", "P", "R", "M", ...DIGIT), choice(...WORD_CHAR)),
-            seq(not(...DIGIT, "R", "M"), optional(seq(choice(...WORD_CHAR), choice(...WORD_CHAR), repeat(choice(...WORD_CHAR))))),
-        )),
+        identifier: $ => choice(
+            /[A-LN-QS-Za-ln-qs-z_]\w\w+/,
+            /[A-LNOQT-Za-ln-qs-z_]\w?/,
+            /[RMrm]\d*[A-Za-z_]\w*/,
+            /S[A-OQ-Za-z\d_]/,
+            /P[A-BD-Za-z\d_]/,
+        ),
         _dw_literal: $ => choice($._immediate_literal, $.array, $.string),
         array: $ => seq("[", repeat($._immediate_literal), "]"),
         string: $ => /"([^\\'\r\n"]|\\[^\r\n])*"/,
@@ -88,7 +77,7 @@ module.exports = grammar({
         char: $ => /'[^\\'\r\n]'/,
         char_escape: $ => /'\\['\\nrt0]'/,
         relative: $ => /~[+-]([1-9]0*)+/,
-        memory: $ => /[#M](([1-9]0*)+|0)/,
+        memory: $ => /[#Mm](([1-9]0*)+|0)/,
         port: $ => /%\w+/,
         _line: $ => choice(
             $._header,

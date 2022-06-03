@@ -5,19 +5,19 @@ BITS == 16
 MINREG 32
 
 
-@DEFINE key R32
-@DEFINE last R31
-@DEFINE down R30
-@DEFINE dx R29
-@DEFINE dy R28
-@DEFINE x R27
-@DEFINE y R26
+@DEFINE key r32
+@DEFINE last r31
+@DEFINE down r30
+@DEFINE dx r29
+@DEFINE dy r28
+@DEFINE x r27
+@DEFINE y r26
 @DEFINE .tail #0
-@DEFINE i R25
-@DEFINE j R24
-@DEFINE l R23
-@DEFINE score R22
-@DEFINE wait R21
+@DEFINE i r25
+@DEFINE j r24
+@DEFINE l r23
+@DEFINE score r22
+@DEFINE wait r21
 @DEFINE tailmax 2047
 @DEFINE black 0
 @DEFINE body 11
@@ -41,17 +41,17 @@ OUT %COLOR 1
 
 CAL .apple
 
-MOV R1 x
-MOV R2 y
+MOV r1 x
+MOV r2 y
 CAL .push
 
 OUT %BUFFER 2
 .loop
     MOV last key
     IN key %GAMEPAD
-    XOR R1 key last
-    AND R1 R1 key
-    OR down down R1
+    XOR r1 key last
+    AND r1 r1 key
+    OR down down r1
 
     INC wait wait
     BRL .skip_step wait 4
@@ -62,36 +62,36 @@ OUT %BUFFER 2
     .skip_step
 
     OUT %WAIT 15
-    IN R1 %WAIT
+    IN r1 %WAIT
     JMP .loop
 
 .step
-    AND R1 down @UP // W
-    BRZ .up R1
+    AND r1 down @UP // W
+    BRZ .up r1
     BGE .up dy @SMAX
         IMM dy -1
         IMM dx 0 
         JMP .input_end
     .up
 
-    AND R1 down @DOWN // S
-    BRZ .down R1
+    AND r1 down @DOWN // S
+    BRZ .down r1
     BRN .down dy
         IMM dy 1
         IMM dx 0
         JMP .input_end
     .down
 
-    AND R1 down @LEFT // A
-    BRZ .left R1
+    AND r1 down @LEFT // A
+    BRZ .left r1
     BGE .left dx @SMAX
         IMM dy 0
         IMM dx -1 
         JMP .input_end
     .left
 
-    AND R1 down @RIGHT // D
-    BRZ .right R1
+    AND r1 down @RIGHT // D
+    BRZ .right r1
     BRN .right dx
         IMM dy 0
         IMM dx 1
@@ -105,9 +105,9 @@ OUT %BUFFER 2
     OUT %X x
     OUT %Y y
 
-    IN R1 %COLOR
-    BRE .ok R1 black
-    BRE .eat_apple R1 apple
+    IN r1 %COLOR
+    BRE .ok r1 black
+    BRE .eat_apple r1 apple
         JMP .gameover
     .eat_apple
         ADD score score 5
@@ -119,52 +119,52 @@ OUT %BUFFER 2
     OUT %COLOR body
 
     CAL .peak_end
-    OUT %X R1
-    OUT %Y R2
+    OUT %X r1
+    OUT %Y r2
     OUT %COLOR tail
 
-    MOV R1 x
-    MOV R2 y
+    MOV r1 x
+    MOV r2 y
     CAL .push
 
     BRL .skip l score
         CAL .shift
-        OUT %X R1
-        OUT %Y R2
+        OUT %X r1
+        OUT %Y r2
         OUT %COLOR 0
     .skip
     RET
 
 .gameover
-    IMM R1 .end_text
+    IMM r1 .end_text
     CAL .print
     OUT %NUMB score
     HLT
 
 
-.push // out R1, R2
-    LSTR .tail j R1
+.push // out r1, r2
+    LSTR .tail j r1
     INC j j
-    LSTR .tail j R2
+    LSTR .tail j r2
     INC j j
     AND j j tailmax
     INC l l
     RET
 
-.peak_end // out R1, R2
+.peak_end // out r1, r2
     DEC j j
     AND j j tailmax
-    LLOD R2 .tail j
+    LLOD r2 .tail j
     DEC j j
-    LLOD R1 .tail j
+    LLOD r1 .tail j
     ADD j j 2
     AND j j tailmax
     RET
 
-.shift // in R1, R2
-    LLOD R1 .tail i
+.shift // in r1, r2
+    LLOD r1 .tail i
     INC i i
-    LLOD R2 .tail i
+    LLOD r2 .tail i
     INC i i
     AND i i tailmax
     DEC l l
@@ -172,25 +172,25 @@ OUT %BUFFER 2
 
 .apple
     .apple_loop
-        IN R1 %RNG
-        AND R1 R1 31
-        OUT %X R1
-        IN R1 %RNG
-        AND R1 R1 31
-        OUT %Y R1
-        IN R1 %COLOR
-        BNE .apple_loop R1 black
+        IN r1 %RNG
+        AND r1 r1 31
+        OUT %X r1
+        IN r1 %RNG
+        AND r1 r1 31
+        OUT %Y r1
+        IN r1 %COLOR
+        BNE .apple_loop r1 black
     OUT %COLOR apple
     RET
 
-.print // in var R1 string*r, var R2, R3
-    LOD R2 R1
-    ADD R2 R2 R1
-    INC R1 R1
-.print_sub // in var R1 char* start, in const R2 char* end, var R3
+.print // in var r1 string*r, var r2, r3
+    LOD r2 r1
+    ADD r2 r2 r1
+    INC r1 r1
+.print_sub // in var r1 char* start, in const r2 char* end, var r3
     .print_loop
-        LOD R3 R1
-        OUT %TEXT R3
-        INC R1 R1
-        BRL .print_loop R1 R2
+        LOD r3 r1
+        OUT %TEXT r3
+        INC r1 r1
+        BRL .print_loop r1 r2
     RET
