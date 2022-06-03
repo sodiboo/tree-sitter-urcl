@@ -58,7 +58,7 @@ module.exports = grammar({
             $.macro,
             $.port,
             $.placeholder,
-            $.identifier,
+            prec(-1, $.identifier),
         ),
         _register: $ => choice($.register, $.program_counter, $.stack_pointer),
         register: $ => /[$R](([1-9]0*)+|0)/,
