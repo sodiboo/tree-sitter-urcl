@@ -384,7 +384,7 @@
     },
     "identifier": {
       "type": "PATTERN",
-      "value": "([A-Za-z_]\\d*)+"
+      "value": "[A-LN-Za-ln-z_]\\w*|[Mm]\\d*[A-Za-z_]\\w*"
     },
     "_dw_literal": {
       "type": "CHOICE",

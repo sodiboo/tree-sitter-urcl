@@ -194,3 +194,5 @@ OUT %BUFFER 2
         INC r1 r1
         BRL .print_loop r1 r2
     RET
+
+    ADD #0 M0 m0

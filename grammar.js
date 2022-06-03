@@ -55,7 +55,8 @@ module.exports = grammar({
         program_counter: $ => "PC",
         stack_pointer: $ => "SP",
         placeholder: $ => seq("<", $.identifier, ">"),
-        identifier: $ => /([A-Za-z_]\d*)+/,
+        // WHY DO MEMS PARSE AS IDENTIFIER BUT NOT REGS??
+        identifier: $ => /[A-LN-Za-ln-z_]\w*|[Mm]\d*[A-Za-z_]\w*/,
         _dw_literal: $ => choice($._immediate_literal, $.array, $.string),
         array: $ => seq("[", field("item", repeat($._immediate_literal)), "]"),
         string: $ => /"([^\\'\r\n"]|\\[^\r\n])*"/,
