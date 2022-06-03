@@ -1,7 +1,6 @@
 (label) @label
 (relative) @relative
 (register) @register
-(zero_register) @register.special
 (stack_pointer) @register.special
 (program_counter) @register.special
 (port) @port

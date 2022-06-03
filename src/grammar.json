@@ -335,10 +335,6 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "zero_register"
-        },
-        {
-          "type": "SYMBOL",
           "name": "register"
         },
         {
@@ -351,13 +347,9 @@
         }
       ]
     },
-    "zero_register": {
-      "type": "PATTERN",
-      "value": "[$R]0"
-    },
     "register": {
       "type": "PATTERN",
-      "value": "[$R]([1-9]0*)+"
+      "value": "[$R](([1-9]0*)+|0)"
     },
     "program_counter": {
       "type": "STRING",

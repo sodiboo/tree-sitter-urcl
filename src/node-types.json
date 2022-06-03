@@ -490,9 +490,5 @@
   {
     "type": "string",
     "named": true
-  },
-  {
-    "type": "zero_register",
-    "named": true
   }
 ]
