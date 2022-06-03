@@ -3019,7 +3019,7 @@
     },
     "memory": {
       "type": "PATTERN",
-      "value": "[#M]([1-9]0*)+"
+      "value": "[#M](([1-9]0*)+|0)"
     },
     "port": {
       "type": "PATTERN",

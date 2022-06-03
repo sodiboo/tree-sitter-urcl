@@ -89,7 +89,7 @@ module.exports = grammar({
         char: $ => /'[^\\'\r\n]'/,
         char_escape: $ => /'\\['\\nrt0]'/,
         relative: $ => /~[+-]([1-9]0*)+/,
-        memory: $ => /[#M]([1-9]0*)+/,
+        memory: $ => /[#M](([1-9]0*)+|0)/,
         port: $ => /%\w+/,
         _line: $ => choice(
             $._header,
