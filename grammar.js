@@ -1,3 +1,14 @@
+const DIGIT = Array(10).fill(0).map((_, i) => i.toString());
+
+const WORD_CHAR = [
+    ...Array(26).fill(0).map((_, i) => (i + 10).toString(36).toUpperCase()),
+    ...Array(26).fill(0).map((_, i) => (i + 10).toString(36).toLowerCase()),
+    ...DIGIT,
+    "_",
+];
+
+const not = (...chars) => choice(...WORD_CHAR.filter(c => !chars.includes(c)));
+
 module.exports = grammar({
     name: "URCL",
     extras: $ => [$._whitespace, $.comment],
@@ -42,21 +53,26 @@ module.exports = grammar({
             $._immediate_literal,
             $.label,
             $.relative,
-            // R0, M0 could be ambiguous so ensure precedence takes over
-            prec(1, $.register),
-            prec(1, $.memory),
+            $.register,
+            $.memory,
             $.macro,
             $.port,
             $.placeholder,
             $.identifier,
         ),
         _register: $ => choice($.zero_register, $.register, $.program_counter, $.stack_pointer),
-        zero_register: $ => /[$Rr]0/,
-        register: $ => /[$Rr]([1-9]0*)+/,
+        zero_register: $ => /[$R]0/,
+        register: $ => /[$R]([1-9]0*)+/,
         program_counter: $ => "PC",
         stack_pointer: $ => "SP",
         placeholder: $ => seq("<", $.identifier, ">"),
-        identifier: $ => /([A-Za-z_]\d*)+/,
+        identifier: $ => token(choice(
+            seq("S", not("P")),
+            seq("P", not("C")),
+            seq(/[RM]/, repeat(choice(...DIGIT)), not(...DIGIT), repeat(choice(...WORD_CHAR))),
+            seq(not("S", "P", "R", "M", ...DIGIT), choice(...WORD_CHAR)),
+            seq(not(...DIGIT, "R", "M"), optional(seq(choice(...WORD_CHAR), choice(...WORD_CHAR), repeat(choice(...WORD_CHAR))))),
+        )),
         _dw_literal: $ => choice($._immediate_literal, $.array, $.string),
         array: $ => seq("[", repeat($._immediate_literal), "]"),
         string: $ => /"([^\\'\r\n"]|\\[^\r\n])*"/,
@@ -73,7 +89,7 @@ module.exports = grammar({
         char: $ => /'[^\\'\r\n]'/,
         char_escape: $ => /'\\['\\nrt0]'/,
         relative: $ => /~[+-]([1-9]0*)+/,
-        memory: $ => /[#Mm]([1-9]0*)+/,
+        memory: $ => /[#M]([1-9]0*)+/,
         port: $ => /%\w+/,
         _line: $ => choice(
             $._header,
@@ -81,6 +97,6 @@ module.exports = grammar({
             $.instruction,
         ),
 
-        instruction: $ => seq(field("label", repeat($.label_def)), field("name", choice($.macro, $.identifier)), filed("operand", repeat($._operand))),
+        instruction: $ => seq(field("label", repeat($.label_def)), field("name", choice($.macro, $.identifier)), field("operand", repeat($._operand))),
     },
 });
