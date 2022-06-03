@@ -96,6 +96,6 @@ module.exports = grammar({
             $.instruction,
         ),
 
-        instruction: $ => seq(field("label", repeat($.label_def)), field("name", choice($.macro, $.identifier)), field("operand", repeat($._operand))),
+        instruction: $ => seq(field("label", repeat($.label_def)), field("name", choice($.macro, $.identifier)), repeat(seq($._whitespace, field("operand", $._operand)))),
     },
 });

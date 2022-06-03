@@ -3078,14 +3078,23 @@
           }
         },
         {
-          "type": "FIELD",
-          "name": "operand",
+          "type": "REPEAT",
           "content": {
-            "type": "REPEAT",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_operand"
-            }
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_whitespace"
+              },
+              {
+                "type": "FIELD",
+                "name": "operand",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_operand"
+                }
+              }
+            ]
           }
         }
       ]
