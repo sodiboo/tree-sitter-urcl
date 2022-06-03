@@ -305,12 +305,20 @@
           "name": "relative"
         },
         {
-          "type": "SYMBOL",
-          "name": "register"
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "register"
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "memory"
+          "type": "PREC",
+          "value": 1,
+          "content": {
+            "type": "SYMBOL",
+            "name": "memory"
+          }
         },
         {
           "type": "SYMBOL",
