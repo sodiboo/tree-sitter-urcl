@@ -42,9 +42,10 @@ module.exports = grammar({
             $._immediate_literal,
             $.label,
             $.relative,
-            $.memory,
+            // R0, M0 could be ambiguous so ensure precedence takes over
+            prec(1, $.register),
+            prec(1, $.memory),
             $.macro,
-            $.register,
             $.port,
             $.placeholder,
             $.identifier,
@@ -80,6 +81,6 @@ module.exports = grammar({
             $.instruction,
         ),
 
-        instruction: $ => seq(field("label", repeat($.label_def)), field("name", choice($.macro, $.identifier)), repeat($._operand)),
+        instruction: $ => seq(field("label", repeat($.label_def)), field("name", choice($.macro, $.identifier)), filed("operand", repeat($._operand))),
     },
 });
