@@ -13,7 +13,7 @@ module.exports = grammar({
         _newline: $ => /[\r\n]/,
         comment: $ => choice(
             // from C# grammar
-            token(seq("//", /\/\/[^\r\n]*/)),
+            token(seq("//", /[^\r\n]*/)),
             token(seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, "/")),
         ),
         _header: $ => choice(
