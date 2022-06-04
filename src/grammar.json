@@ -29,10 +29,10 @@
                   },
                   {
                     "type": "FIELD",
-                    "name": "DW",
+                    "name": "define_word",
                     "content": {
                       "type": "SYMBOL",
-                      "name": "define_word"
+                      "name": "DW"
                     }
                   },
                   {
@@ -71,10 +71,10 @@
                 },
                 {
                   "type": "FIELD",
-                  "name": "DW",
+                  "name": "define_word",
                   "content": {
                     "type": "SYMBOL",
-                    "name": "define_word"
+                    "name": "DW"
                   }
                 },
                 {
@@ -299,7 +299,7 @@
         }
       ]
     },
-    "define_word": {
+    "DW": {
       "type": "SEQ",
       "members": [
         {

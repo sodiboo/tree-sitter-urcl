@@ -7,12 +7,12 @@ module.exports = grammar({
             repeat($._newline),
             repeat(seq(choice(
                 field("header", $._header),
-                field("DW", $.define_word),
+                field("define_word", $.DW),
                 field("inst", $.instruction),
             ), repeat1($._newline))),
             optional(choice(
                 field("header", $._header),
-                field("DW", $.define_word),
+                field("define_word", $.DW),
                 field("inst", $.instruction),
             ))
         ),
@@ -43,7 +43,7 @@ module.exports = grammar({
             field("header_type", "RUN"),
             field("value", choice("RAM", "ROM")),
         ),
-        define_word: $ => seq(field("label", repeat($.label_def)), "DW", field("value", $._dw_literal)),
+        DW: $ => seq(field("label", repeat($.label_def)), "DW", field("value", $._dw_literal)),
         label_def: $ => seq($.label, repeat1($._newline)),
         label: $ => seq(".", field("name", $.identifier)),
         _operand: $ => choice(

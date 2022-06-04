@@ -42,6 +42,48 @@
     }
   },
   {
+    "type": "DW",
+    "named": true,
+    "fields": {
+      "label": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "label_def",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "char",
+            "named": true
+          },
+          {
+            "type": "char_escape",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "MINHEAP",
     "named": true,
     "fields": {
@@ -171,48 +213,6 @@
     "type": "comment",
     "named": true,
     "fields": {}
-  },
-  {
-    "type": "define_word",
-    "named": true,
-    "fields": {
-      "label": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "label_def",
-            "named": true
-          }
-        ]
-      },
-      "value": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "array",
-            "named": true
-          },
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "char_escape",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          },
-          {
-            "type": "string",
-            "named": true
-          }
-        ]
-      }
-    }
   },
   {
     "type": "instruction",
@@ -352,12 +352,12 @@
     "type": "source_file",
     "named": true,
     "fields": {
-      "DW": {
+      "define_word": {
         "multiple": true,
         "required": false,
         "types": [
           {
-            "type": "define_word",
+            "type": "DW",
             "named": true
           }
         ]
