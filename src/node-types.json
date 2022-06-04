@@ -1,5 +1,149 @@
 [
   {
+    "type": "BITS",
+    "named": true,
+    "fields": {
+      "comparison": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "<=",
+            "named": false
+          },
+          {
+            "type": "==",
+            "named": false
+          },
+          {
+            "type": ">=",
+            "named": false
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char",
+            "named": true
+          },
+          {
+            "type": "char_escape",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "MINHEAP",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char",
+            "named": true
+          },
+          {
+            "type": "char_escape",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "MINREG",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char",
+            "named": true
+          },
+          {
+            "type": "char_escape",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "MINSTACK",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char",
+            "named": true
+          },
+          {
+            "type": "char_escape",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "RUN",
+    "named": true,
+    "fields": {
+      "header_type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "RUN",
+            "named": false
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "RAM",
+            "named": false
+          },
+          {
+            "type": "ROM",
+            "named": false
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "array",
     "named": true,
     "fields": {
@@ -65,150 +209,6 @@
           {
             "type": "string",
             "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "header_BITS",
-    "named": true,
-    "fields": {
-      "comparison": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "<=",
-            "named": false
-          },
-          {
-            "type": "==",
-            "named": false
-          },
-          {
-            "type": ">=",
-            "named": false
-          }
-        ]
-      },
-      "value": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "char_escape",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "header_MINHEAP",
-    "named": true,
-    "fields": {
-      "value": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "char_escape",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "header_MINREG",
-    "named": true,
-    "fields": {
-      "value": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "char_escape",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "header_MINSTACK",
-    "named": true,
-    "fields": {
-      "value": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "char",
-            "named": true
-          },
-          {
-            "type": "char_escape",
-            "named": true
-          },
-          {
-            "type": "number",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "header_RUN",
-    "named": true,
-    "fields": {
-      "header_type": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "RUN",
-            "named": false
-          }
-        ]
-      },
-      "value": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "RAM",
-            "named": false
-          },
-          {
-            "type": "ROM",
-            "named": false
           }
         ]
       }
@@ -351,40 +351,53 @@
   {
     "type": "source_file",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "define_word",
-          "named": true
-        },
-        {
-          "type": "header_BITS",
-          "named": true
-        },
-        {
-          "type": "header_MINHEAP",
-          "named": true
-        },
-        {
-          "type": "header_MINREG",
-          "named": true
-        },
-        {
-          "type": "header_MINSTACK",
-          "named": true
-        },
-        {
-          "type": "header_RUN",
-          "named": true
-        },
-        {
-          "type": "instruction",
-          "named": true
-        }
-      ]
+    "fields": {
+      "DW": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "define_word",
+            "named": true
+          }
+        ]
+      },
+      "header": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "BITS",
+            "named": true
+          },
+          {
+            "type": "MINHEAP",
+            "named": true
+          },
+          {
+            "type": "MINREG",
+            "named": true
+          },
+          {
+            "type": "MINSTACK",
+            "named": true
+          },
+          {
+            "type": "RUN",
+            "named": true
+          }
+        ]
+      },
+      "inst": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "instruction",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {

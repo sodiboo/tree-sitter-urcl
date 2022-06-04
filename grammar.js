@@ -5,8 +5,16 @@ module.exports = grammar({
     rules: {
         source_file: $ => seq(
             repeat($._newline),
-            repeat(seq($._line, repeat1($._newline))),
-            optional($._line)
+            repeat(seq(choice(
+                field("header", $._header),
+                field("DW", $.define_word),
+                field("inst", $.instruction),
+            ), repeat1($._newline))),
+            optional(choice(
+                field("header", $._header),
+                field("DW", $.define_word),
+                field("inst", $.instruction),
+            ))
         ),
         macro: $ => /@\w+/,
         _whitespace: $ => /[\t\f\v \u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]/, // /\s/ without \r\n
@@ -17,21 +25,21 @@ module.exports = grammar({
             token(seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, "/")),
         ),
         _header: $ => choice(
-            $.header_BITS,
-            $.header_MINREG,
-            $.header_MINHEAP,
-            $.header_MINSTACK,
-            $.header_RUN,
+            $.BITS,
+            $.MINREG,
+            $.MINHEAP,
+            $.MINSTACK,
+            $.RUN,
         ),
-        header_BITS: $ => seq(
+        BITS: $ => seq(
             "BITS",
             optional(field("comparison", choice("<=", "==", ">="))),
             field("value", $._immediate_literal)
         ),
-        header_MINREG: $ => seq("MINREG", field("value", $._immediate_literal)),
-        header_MINHEAP: $ => seq("MINHEAP", field("value", $._immediate_literal)),
-        header_MINSTACK: $ => seq("MINSTACK", field("value", $._immediate_literal)),
-        header_RUN: $ => seq(
+        MINREG: $ => seq("MINREG", field("value", $._immediate_literal)),
+        MINHEAP: $ => seq("MINHEAP", field("value", $._immediate_literal)),
+        MINSTACK: $ => seq("MINSTACK", field("value", $._immediate_literal)),
+        RUN: $ => seq(
             field("header_type", "RUN"),
             field("value", choice("RAM", "ROM")),
         ),
@@ -75,11 +83,6 @@ module.exports = grammar({
         relative: $ => /~[+-]([1-9]0*)+/,
         memory: $ => /[#Mm](([1-9]0*)+|0)/,
         port: $ => /%\w+/,
-        _line: $ => choice(
-            $._header,
-            $.define_word,
-            $.instruction,
-        ),
 
         instruction: $ => seq(field("label", repeat($.label_def)), field("name", choice($.macro, $.identifier)), field("operand", repeat($._operand))),
     },

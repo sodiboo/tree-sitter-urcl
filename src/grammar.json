@@ -17,8 +17,33 @@
             "type": "SEQ",
             "members": [
               {
-                "type": "SYMBOL",
-                "name": "_line"
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "FIELD",
+                    "name": "header",
+                    "content": {
+                      "type": "SYMBOL",
+                      "name": "_header"
+                    }
+                  },
+                  {
+                    "type": "FIELD",
+                    "name": "DW",
+                    "content": {
+                      "type": "SYMBOL",
+                      "name": "define_word"
+                    }
+                  },
+                  {
+                    "type": "FIELD",
+                    "name": "inst",
+                    "content": {
+                      "type": "SYMBOL",
+                      "name": "instruction"
+                    }
+                  }
+                ]
               },
               {
                 "type": "REPEAT1",
@@ -34,8 +59,33 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "_line"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "FIELD",
+                  "name": "header",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_header"
+                  }
+                },
+                {
+                  "type": "FIELD",
+                  "name": "DW",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "define_word"
+                  }
+                },
+                {
+                  "type": "FIELD",
+                  "name": "inst",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "instruction"
+                  }
+                }
+              ]
             },
             {
               "type": "BLANK"
@@ -102,27 +152,27 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "header_BITS"
+          "name": "BITS"
         },
         {
           "type": "SYMBOL",
-          "name": "header_MINREG"
+          "name": "MINREG"
         },
         {
           "type": "SYMBOL",
-          "name": "header_MINHEAP"
+          "name": "MINHEAP"
         },
         {
           "type": "SYMBOL",
-          "name": "header_MINSTACK"
+          "name": "MINSTACK"
         },
         {
           "type": "SYMBOL",
-          "name": "header_RUN"
+          "name": "RUN"
         }
       ]
     },
-    "header_BITS": {
+    "BITS": {
       "type": "SEQ",
       "members": [
         {
@@ -168,7 +218,7 @@
         }
       ]
     },
-    "header_MINREG": {
+    "MINREG": {
       "type": "SEQ",
       "members": [
         {
@@ -185,7 +235,7 @@
         }
       ]
     },
-    "header_MINHEAP": {
+    "MINHEAP": {
       "type": "SEQ",
       "members": [
         {
@@ -202,7 +252,7 @@
         }
       ]
     },
-    "header_MINSTACK": {
+    "MINSTACK": {
       "type": "SEQ",
       "members": [
         {
@@ -219,7 +269,7 @@
         }
       ]
     },
-    "header_RUN": {
+    "RUN": {
       "type": "SEQ",
       "members": [
         {
@@ -506,23 +556,6 @@
     "port": {
       "type": "PATTERN",
       "value": "%\\w+"
-    },
-    "_line": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "_header"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "define_word"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "instruction"
-        }
-      ]
     },
     "instruction": {
       "type": "SEQ",
