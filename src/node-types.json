@@ -78,7 +78,7 @@
         "required": false,
         "types": [
           {
-            "type": "label_def",
+            "type": "label",
             "named": true
           }
         ]
@@ -391,7 +391,7 @@
         "required": false,
         "types": [
           {
-            "type": "label_def",
+            "type": "label",
             "named": true
           }
         ]
@@ -484,21 +484,6 @@
           }
         ]
       }
-    }
-  },
-  {
-    "type": "label_def",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "label",
-          "named": true
-        }
-      ]
     }
   },
   {
