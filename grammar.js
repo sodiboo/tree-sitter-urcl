@@ -43,7 +43,7 @@ module.exports = grammar({
             field("header_type", "RUN"),
             field("value", choice("RAM", "ROM")),
         ),
-        DW: $ => seq(field("label", repeat(seq($.label, repeat1($._newline)))), "DW", field("value", $._dw_literal)),
+        DW: $ => seq(repeat(seq(field("label", $.label), repeat1($._newline))), "DW", field("value", $._dw_literal)),
         label: $ => seq(".", field("name", $.identifier)),
         _operand: $ => choice(
             $._immediate_literal,
@@ -87,6 +87,6 @@ module.exports = grammar({
         memory: $ => /[#Mm](([1-9]0*)+|0)/,
         port: $ => /%\w+/,
 
-        instruction: $ => seq(field("label", repeat(seq($.label, repeat1($._newline)))), field("name", choice($.macro, $.identifier)), field("operand", repeat($._operand))),
+        instruction: $ => seq(repeat(seq(field("label", $.label), repeat1($._newline))), field("name", choice($.macro, $.identifier)), field("operand", repeat($._operand))),
     },
 });
