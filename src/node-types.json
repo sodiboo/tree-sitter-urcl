@@ -34,7 +34,35 @@
             "named": true
           },
           {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
             "type": "number",
+            "named": true
+          },
+          {
+            "type": "placeholder",
+            "named": true
+          },
+          {
+            "type": "port",
+            "named": true
+          },
+          {
+            "type": "relative",
             "named": true
           }
         ]
@@ -72,7 +100,35 @@
             "named": true
           },
           {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
             "type": "number",
+            "named": true
+          },
+          {
+            "type": "placeholder",
+            "named": true
+          },
+          {
+            "type": "port",
+            "named": true
+          },
+          {
+            "type": "relative",
             "named": true
           },
           {
@@ -100,7 +156,35 @@
             "named": true
           },
           {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
             "type": "number",
+            "named": true
+          },
+          {
+            "type": "placeholder",
+            "named": true
+          },
+          {
+            "type": "port",
+            "named": true
+          },
+          {
+            "type": "relative",
             "named": true
           }
         ]
@@ -124,7 +208,35 @@
             "named": true
           },
           {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
             "type": "number",
+            "named": true
+          },
+          {
+            "type": "placeholder",
+            "named": true
+          },
+          {
+            "type": "port",
+            "named": true
+          },
+          {
+            "type": "relative",
             "named": true
           }
         ]
@@ -148,7 +260,35 @@
             "named": true
           },
           {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
             "type": "number",
+            "named": true
+          },
+          {
+            "type": "placeholder",
+            "named": true
+          },
+          {
+            "type": "port",
+            "named": true
+          },
+          {
+            "type": "relative",
             "named": true
           }
         ]
@@ -202,7 +342,35 @@
             "named": true
           },
           {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "label",
+            "named": true
+          },
+          {
+            "type": "macro",
+            "named": true
+          },
+          {
+            "type": "memory",
+            "named": true
+          },
+          {
             "type": "number",
+            "named": true
+          },
+          {
+            "type": "placeholder",
+            "named": true
+          },
+          {
+            "type": "port",
+            "named": true
+          },
+          {
+            "type": "relative",
             "named": true
           }
         ]

@@ -369,14 +369,6 @@
         },
         {
           "type": "SYMBOL",
-          "name": "label"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "relative"
-        },
-        {
-          "type": "SYMBOL",
           "name": "register"
         },
         {
@@ -386,26 +378,6 @@
         {
           "type": "SYMBOL",
           "name": "stack_pointer"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "memory"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "macro"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "port"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "placeholder"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "identifier"
         }
       ]
     },
@@ -501,6 +473,34 @@
         {
           "type": "SYMBOL",
           "name": "char_escape"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "label"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "relative"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "memory"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "macro"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "port"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "placeholder"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
         }
       ]
     },
