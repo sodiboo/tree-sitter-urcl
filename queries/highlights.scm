@@ -14,6 +14,7 @@
 (instruction
     name: (identifier) @instruction
 )
+"DW" @instruction
 (placeholder
     (identifier) @identifier.placeholder
 )
