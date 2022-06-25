@@ -25,7 +25,7 @@ MINREG 32
 @DEFINE apple 8
 
 .end_text
-DW [ 18 'g' 'a' 'm' 'e' '-' 'o' 'v' 'e' 'r' '\n' 's' 'c' 'o' 'r' 'e' ':' ':' ]
+DW [ 18 "game-over\nscore::" ]
 
 IMM dx 0
 IMM dy 1

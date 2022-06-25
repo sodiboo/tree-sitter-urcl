@@ -6,8 +6,8 @@
 (port) @port
 (comment) @comment
 (char) @string
-(char_escape) @string.special
 (string) @string
+(escape_sequence) @string.special
 (number) @number
 (memory) @address
 (macro) @macro

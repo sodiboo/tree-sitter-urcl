@@ -58,12 +58,26 @@ module.exports = grammar({
         // WHY DO MEMS PARSE AS IDENTIFIER BUT NOT REGS??
         identifier: $ => /[A-LN-Za-ln-z_]\w*|[Mm]\d*[A-Za-z_]\w*/,
         _dw_literal: $ => choice($._immediate_literal, $.array, $.string),
-        array: $ => seq("[", field("item", repeat($._immediate_literal)), "]"),
-        string: $ => /"([^\\'\r\n"]|\\[^\r\n])*"/,
+        array: $ => seq("[", field("item", repeat($._dw_literal)), "]"),
+        // string from C# grammar, allow its escape sequences because why not 🤷‍♀️
+        string: $ => seq(
+            '"',
+            repeat(choice(
+                $._string_literal_fragment,
+                $.escape_sequence
+            )),
+            '"'
+        ),
+        _string_literal_fragment: $ => token.immediate(prec(1, /[^\\"\n]+/)),
+        escape_sequence: $ => token(choice(
+            /\\x[0-9a-fA-F][0-9a-fA-F]?[0-9a-fA-F]?[0-9a-fA-F]?/,
+            /\\u[0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]/,
+            /\\U[0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]/,
+            /\\[^xuU]/,
+        )),
         _immediate_literal: $ => choice(
             $.number,
             $.char,
-            $.char_escape,
             $.label,
             $.relative,
             $.memory,
@@ -81,8 +95,11 @@ module.exports = grammar({
                 /0x[A-Fa-f\d]+/,
             ),
         )),
-        char: $ => /'[^\\'\r\n]'/,
-        char_escape: $ => /'\\['\\nrt0]'/,
+        char: $ => seq(
+            "'",
+            choice(token.immediate(/[^'\\]/), $.escape_sequence),
+            "'"
+        ),
         relative: $ => /~[+-]([1-9]0*)+/,
         memory: $ => /[#Mm](([1-9]0*)+|0)/,
         port: $ => /%\w+/,

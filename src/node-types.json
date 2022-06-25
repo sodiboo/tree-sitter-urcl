@@ -30,10 +30,6 @@
             "named": true
           },
           {
-            "type": "char_escape",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
@@ -96,10 +92,6 @@
             "named": true
           },
           {
-            "type": "char_escape",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
@@ -152,10 +144,6 @@
             "named": true
           },
           {
-            "type": "char_escape",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
@@ -204,10 +192,6 @@
             "named": true
           },
           {
-            "type": "char_escape",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
@@ -253,10 +237,6 @@
         "types": [
           {
             "type": "char",
-            "named": true
-          },
-          {
-            "type": "char_escape",
             "named": true
           },
           {
@@ -334,11 +314,11 @@
         "required": false,
         "types": [
           {
-            "type": "char",
+            "type": "array",
             "named": true
           },
           {
-            "type": "char_escape",
+            "type": "char",
             "named": true
           },
           {
@@ -372,9 +352,28 @@
           {
             "type": "relative",
             "named": true
+          },
+          {
+            "type": "string",
+            "named": true
           }
         ]
       }
+    }
+  },
+  {
+    "type": "char",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "escape_sequence",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -416,10 +415,6 @@
         "types": [
           {
             "type": "char",
-            "named": true
-          },
-          {
-            "type": "char_escape",
             "named": true
           },
           {
@@ -554,6 +549,29 @@
     }
   },
   {
+    "type": "string",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "escape_sequence",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "\"",
+    "named": false
+  },
+  {
+    "type": "'",
+    "named": false
+  },
+  {
     "type": ".",
     "named": false
   },
@@ -618,11 +636,7 @@
     "named": false
   },
   {
-    "type": "char",
-    "named": true
-  },
-  {
-    "type": "char_escape",
+    "type": "escape_sequence",
     "named": true
   },
   {
@@ -659,10 +673,6 @@
   },
   {
     "type": "stack_pointer",
-    "named": true
-  },
-  {
-    "type": "string",
     "named": true
   }
 ]
