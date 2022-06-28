@@ -9,7 +9,7 @@ module.exports = grammar({
                 field("header", $._header),
                 field("define_word", $.DW),
                 field("inst", $.instruction),
-            ), repeat1($._newline))),
+            ), $._newline)),
             optional(choice(
                 field("header", $._header),
                 field("define_word", $.DW),
@@ -17,13 +17,13 @@ module.exports = grammar({
             ))
         ),
         macro: $ => /@\w+/,
-        _whitespace: $ => /[\t\f\v \u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]/, // /\s/ without \r\n
-        _newline: $ => /[\r\n]/,
-        comment: $ => choice(
+        _whitespace: $ => /[\t\f\v \u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]+/, // /\s/ without \r\n
+        _newline: $ => /[\r\n]+/,
+        comment: $ => token(choice(
             // from C# grammar
-            token(seq("//", /[^\r\n]*/)),
-            token(seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, "/")),
-        ),
+            seq("//", /[^\r\n]*/),
+            seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, "/"),
+        )),
         _header: $ => choice(
             $.BITS,
             $.MINREG,
@@ -43,7 +43,7 @@ module.exports = grammar({
             field("header_type", "RUN"),
             field("value", choice("RAM", "ROM")),
         ),
-        DW: $ => seq(repeat(seq(field("label", $.label), repeat1($._newline))), "DW", field("value", $._dw_literal)),
+        DW: $ => seq(repeat(seq(field("label", $.label), $._newline)), "DW", field("value", $._dw_literal)),
         label: $ => seq(".", field("name", $.identifier)),
         _operand: $ => choice(
             $._immediate_literal,
@@ -58,18 +58,17 @@ module.exports = grammar({
         // WHY DO MEMS PARSE AS IDENTIFIER BUT NOT REGS??
         identifier: $ => /[A-LN-Za-ln-z_]\w*|[Mm]\d*[A-Za-z_]\w*/,
         _dw_literal: $ => choice($._immediate_literal, $.array, $.string),
-        array: $ => seq("[", field("item", repeat($._dw_literal)), "]"),
+        array: $ => seq("[", choice($._newline, field("item", repeat($._dw_literal))), "]"),
         // string from C# grammar, allow its escape sequences because why not 🤷‍♀️
         string: $ => seq(
             '"',
             repeat(choice(
-                $._string_literal_fragment,
+                token.immediate(prec(1, /[^\\"\n]+/)),
                 $.escape_sequence
             )),
             '"'
         ),
-        _string_literal_fragment: $ => token.immediate(prec(1, /[^\\"\n]+/)),
-        escape_sequence: $ => token(choice(
+        escape_sequence: $ => token.immediate(choice(
             /\\x[0-9a-fA-F][0-9a-fA-F]?[0-9a-fA-F]?[0-9a-fA-F]?/,
             /\\u[0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]/,
             /\\U[0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]/,
@@ -104,6 +103,10 @@ module.exports = grammar({
         memory: $ => /[#Mm](([1-9]0*)+|0)/,
         port: $ => /%\w+/,
 
-        instruction: $ => seq(repeat(seq(field("label", $.label), repeat1($._newline))), field("name", choice($.macro, $.identifier)), field("operand", repeat($._operand))),
+        instruction: $ => seq(
+            repeat(seq(field("label", $.label), $._newline)),
+            field("name", choice($.macro, $.identifier)),
+            repeat(field("operand", $._operand)),
+        ),
     },
 });

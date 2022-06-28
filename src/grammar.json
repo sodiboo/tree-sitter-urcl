@@ -46,11 +46,8 @@
                 ]
               },
               {
-                "type": "REPEAT1",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "_newline"
-                }
+                "type": "SYMBOL",
+                "name": "_newline"
               }
             ]
           }
@@ -100,18 +97,18 @@
     },
     "_whitespace": {
       "type": "PATTERN",
-      "value": "[\\t\\f\\v \\u00a0\\u1680\\u2000-\\u200a\\u2028\\u2029\\u202f\\u205f\\u3000\\ufeff]"
+      "value": "[\\t\\f\\v \\u00a0\\u1680\\u2000-\\u200a\\u2028\\u2029\\u202f\\u205f\\u3000\\ufeff]+"
     },
     "_newline": {
       "type": "PATTERN",
-      "value": "[\\r\\n]"
+      "value": "[\\r\\n]+"
     },
     "comment": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "TOKEN",
-          "content": {
+      "type": "TOKEN",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
             "type": "SEQ",
             "members": [
               {
@@ -123,11 +120,8 @@
                 "value": "[^\\r\\n]*"
               }
             ]
-          }
-        },
-        {
-          "type": "TOKEN",
-          "content": {
+          },
+          {
             "type": "SEQ",
             "members": [
               {
@@ -144,8 +138,8 @@
               }
             ]
           }
-        }
-      ]
+        ]
+      }
     },
     "_header": {
       "type": "CHOICE",
@@ -316,11 +310,8 @@
                 }
               },
               {
-                "type": "REPEAT1",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "_newline"
-                }
+                "type": "SYMBOL",
+                "name": "_newline"
               }
             ]
           }
@@ -435,15 +426,24 @@
           "value": "["
         },
         {
-          "type": "FIELD",
-          "name": "item",
-          "content": {
-            "type": "REPEAT",
-            "content": {
+          "type": "CHOICE",
+          "members": [
+            {
               "type": "SYMBOL",
-              "name": "_dw_literal"
+              "name": "_newline"
+            },
+            {
+              "type": "FIELD",
+              "name": "item",
+              "content": {
+                "type": "REPEAT",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_dw_literal"
+                }
+              }
             }
-          }
+          ]
         },
         {
           "type": "STRING",
@@ -464,8 +464,15 @@
             "type": "CHOICE",
             "members": [
               {
-                "type": "SYMBOL",
-                "name": "_string_literal_fragment"
+                "type": "IMMEDIATE_TOKEN",
+                "content": {
+                  "type": "PREC",
+                  "value": 1,
+                  "content": {
+                    "type": "PATTERN",
+                    "value": "[^\\\\\"\\n]+"
+                  }
+                }
               },
               {
                 "type": "SYMBOL",
@@ -480,19 +487,8 @@
         }
       ]
     },
-    "_string_literal_fragment": {
-      "type": "IMMEDIATE_TOKEN",
-      "content": {
-        "type": "PREC",
-        "value": 1,
-        "content": {
-          "type": "PATTERN",
-          "value": "[^\\\\\"\\n]+"
-        }
-      }
-    },
     "escape_sequence": {
-      "type": "TOKEN",
+      "type": "IMMEDIATE_TOKEN",
       "content": {
         "type": "CHOICE",
         "members": [
@@ -647,11 +643,8 @@
                 }
               },
               {
-                "type": "REPEAT1",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "_newline"
-                }
+                "type": "SYMBOL",
+                "name": "_newline"
               }
             ]
           }
@@ -674,10 +667,10 @@
           }
         },
         {
-          "type": "FIELD",
-          "name": "operand",
+          "type": "REPEAT",
           "content": {
-            "type": "REPEAT",
+            "type": "FIELD",
+            "name": "operand",
             "content": {
               "type": "SYMBOL",
               "name": "_operand"
