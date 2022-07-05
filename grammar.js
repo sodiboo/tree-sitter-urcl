@@ -59,12 +59,13 @@ module.exports = grammar({
         // string from C# grammar, allow its escape sequences because why not 🤷‍♀️
         string: $ => seq(
             '"',
-            repeat(field("string_segment", choice(
-                token.immediate(/[^\\"\n]+/),
-                $.escape_sequence
-            ))),
+            repeat(choice(
+                $.string_segment,
+                $.escape_sequence,
+            )),
             '"'
         ),
+        string_segment: $ => token.immediate(/[^\\"\n]+/),
         escape_sequence: $ => token.immediate(choice(
             /\\x[0-9a-fA-F][0-9a-fA-F]?[0-9a-fA-F]?[0-9a-fA-F]?/,
             /\\u[0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]/,
@@ -93,9 +94,10 @@ module.exports = grammar({
         )),
         char: $ => seq(
             "'",
-            choice(token.immediate(/[^'\\]/), $.escape_sequence),
+            choice($.char_value, $.escape_sequence),
             "'"
         ),
+        char_value: $ => token.immediate(/[^'\\]/),
         relative: $ => /~[+-]([1-9]0*)+/,
         memory: $ => /[#Mm](([1-9]0*)+|0)/,
         port: $ => /%\w+/,
