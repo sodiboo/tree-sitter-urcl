@@ -65,13 +65,26 @@ module.exports = grammar({
             ))),
             '"'
         ),
+        char: $ => seq(
+            "'",
+            field("content", choice($.char_value, $.escape_sequence)),
+            "'"
+        ),
         string_segment: $ => token.immediate(/[^\\"\n]+/),
-        escape_sequence: $ => token.immediate(choice(
-            /\\x[0-9a-fA-F][0-9a-fA-F]?[0-9a-fA-F]?[0-9a-fA-F]?/,
-            /\\u[0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]/,
-            /\\U[0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F][0-9a-fA-F]/,
-            /\\[^xuU]/,
-        )),
+        char_value: $ => token.immediate(/[^'\\]/),
+        escape_sequence: $ => choice(
+            seq(token.immediate("\\x"), field("value", $.hex_escape)),
+            seq(token.immediate("\\u"), field("value", alias($.unicode_escape_short, $.unicode_escape))),
+            seq(token.immediate("\\u{"), field("value", $.unicode_escape), token.immediate("}")),
+            seq(token.immediate("\\U"), field("value", alias($.unicode_escape_long, $.unicode_escape))),
+            seq(token.immediate("\\U{"), field("value", $.unicode_escape), token.immediate("}")),
+            seq(token.immediate("\\"), field("value", $.char_escape)),
+        ),
+        hex_escape: $ => token.immediate(/[0-9a-fA-F]{2}/),
+        unicode_escape: $ => token.immediate(/[0-9a-fA-F]+/),
+        unicode_escape_short: $ => token.immediate(/[0-9a-fA-F]{4}/),
+        unicode_escape_long: $ => token.immediate(/[0-9a-fA-F]{8}/),
+        char_escape: $ => token.immediate(/[^xuU]/),
         _immediate_literal: $ => choice(
             $.number,
             $.char,
@@ -92,12 +105,6 @@ module.exports = grammar({
                 /0x[A-Fa-f\d]+/,
             ),
         )),
-        char: $ => seq(
-            "'",
-            field("content", choice($.char_value, $.escape_sequence)),
-            "'"
-        ),
-        char_value: $ => token.immediate(/[^'\\]/),
         relative: $ => /~[+-]([1-9]0*)+/,
         memory: $ => /[#Mm](([1-9]0*)+|0)/,
         port: $ => /%\w+/,

@@ -402,6 +402,30 @@
     }
   },
   {
+    "type": "escape_sequence",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "char_escape",
+            "named": true
+          },
+          {
+            "type": "hex_escape",
+            "named": true
+          },
+          {
+            "type": "unicode_escape",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "instruction",
     "named": true,
     "fields": {
@@ -677,8 +701,36 @@
     "named": false
   },
   {
+    "type": "\\",
+    "named": false
+  },
+  {
+    "type": "\\U",
+    "named": false
+  },
+  {
+    "type": "\\U{",
+    "named": false
+  },
+  {
+    "type": "\\u",
+    "named": false
+  },
+  {
+    "type": "\\u{",
+    "named": false
+  },
+  {
+    "type": "\\x",
+    "named": false
+  },
+  {
     "type": "]",
     "named": false
+  },
+  {
+    "type": "char_escape",
+    "named": true
   },
   {
     "type": "char_value",
@@ -689,7 +741,7 @@
     "named": true
   },
   {
-    "type": "escape_sequence",
+    "type": "hex_escape",
     "named": true
   },
   {
@@ -731,5 +783,13 @@
   {
     "type": "string_segment",
     "named": true
+  },
+  {
+    "type": "unicode_escape",
+    "named": true
+  },
+  {
+    "type": "}",
+    "named": false
   }
 ]
