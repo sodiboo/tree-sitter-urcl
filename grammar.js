@@ -1,10 +1,10 @@
 module.exports = grammar({
     name: "URCL",
-    extras: $ => [$._whitespace, $.comment],
+    extras: $ => [$.comment, $._whitespace],
 
     rules: {
         source_file: $ => seq(
-            repeat($._newline),
+            optional($._newline),
             repeat(seq(choice(
                 field("header", $._header),
                 field("define_word", $.DW),
@@ -18,12 +18,9 @@ module.exports = grammar({
         ),
         macro: $ => /@\w+/,
         _whitespace: $ => /[\t\f\v \u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]+/, // /\s/ without \r\n
-        _newline: $ => /[\r\n]+/,
-        comment: $ => token(choice(
-            // from C# grammar
-            seq("//", /[^\r\n]*/),
-            seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, "/"),
-        )),
+        _newline: $ => repeat1(seq(optional(alias($.single_comment, $.comment)), /[\r\n]/)),
+        single_comment: $ => token(seq("//", /[^\r\n]*/)),
+        comment: $ => token(seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, "/")),
         _header: $ => choice(
             $.BITS,
             $.MINREG,
@@ -62,10 +59,10 @@ module.exports = grammar({
         // string from C# grammar, allow its escape sequences because why not 🤷‍♀️
         string: $ => seq(
             '"',
-            repeat(choice(
-                token.immediate(prec(1, /[^\\"\n]+/)),
+            repeat(field("string_segment", choice(
+                token.immediate(/[^\\"\n]+/),
                 $.escape_sequence
-            )),
+            ))),
             '"'
         ),
         escape_sequence: $ => token.immediate(choice(

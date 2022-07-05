@@ -129,6 +129,16 @@
           }
         ]
       }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -359,6 +369,16 @@
           }
         ]
       }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -458,6 +478,16 @@
           }
         ]
       }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -541,21 +571,32 @@
           }
         ]
       }
-    }
-  },
-  {
-    "type": "string",
-    "named": true,
-    "fields": {},
+    },
     "children": {
       "multiple": true,
       "required": false,
       "types": [
         {
-          "type": "escape_sequence",
+          "type": "comment",
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "string",
+    "named": true,
+    "fields": {
+      "string_segment": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "escape_sequence",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
