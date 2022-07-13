@@ -56,7 +56,8 @@ module.exports = grammar({
         identifier: $ => /[A-LN-Za-ln-z_]\w*|[Mm]\d*[A-Za-z_]\w*/,
         _dw_literal: $ => choice($._immediate_literal, $.array, $.string),
         array: $ => seq("[", choice($._newline, field("item", repeat($._dw_literal))), "]"),
-        // string from C# grammar, allow its escape sequences because why not 🤷‍♀️
+        
+        // string from C# grammar, allow its escape sequences because why not
         string: $ => seq(
             '"',
             repeat(field("content", choice(
